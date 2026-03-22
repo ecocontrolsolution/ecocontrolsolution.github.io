@@ -1,10 +1,162 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ECO Control Solution</title>
+
+<style>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #e5e7eb;
+}
+
+/* Header */
+header {
+    background: url('https://images.unsplash.com/photo-1581091215367-59ab6b8fbd1b') no-repeat center/cover;
+    padding: 100px 20px;
+    text-align: center;
+    animation: fadeIn 2s ease;
+}
+
+header h1 {
+    font-size: 42px;
+    margin: 0;
+}
+
+header p {
+    font-size: 18px;
+}
+
+/* Sections */
+section {
+    padding: 50px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+h2 {
+    color: #38bdf8;
+}
+
+/* Services grid */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Cards */
+.card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* Image zoom on hover */
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.4s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #38bdf8;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0ea5e9;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: #020617;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+</style>
 </head>
+
 <body>
-  <h1>Welcome</h1>
-  <p>My site is live.</p>
+
+<header>
+    <h1>ECO Control Solution</h1>
+    <p>Reliable automation solutions for industry and smart buildings</p>
+</header>
+
+<section>
+    <h2>Our Services</h2>
+    <div class="services">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1581093588401-12a6b9d0c75c">
+            <h3>Industrial Automation</h3>
+            <p>PLC, SCADA, and process control solutions tailored for industrial systems.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
+            <h3>Building Management Systems</h3>
+            <p>Smart HVAC, energy monitoring, and building automation solutions.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789">
+            <h3>Sensors & Controls</h3>
+            <p>Supply and integration of sensors, controllers, and automation devices.</p>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2>About Us</h2>
+    <p>
+        We provide practical and reliable automation and control solutions for industrial and commercial applications.
+        Our focus is on efficiency, integration, and long-term performance.
+    </p>
+</section>
+
+<section>
+    <h2>Contact</h2>
+    <p>Email: info@ecocontrolsolution.com</p>
+    <p>Location: Perth, WA</p>
+</section>
+
+<footer>
+    <p>© 2026 ECO Control Solution</p>
+</footer>
+
 </body>
 </html>
