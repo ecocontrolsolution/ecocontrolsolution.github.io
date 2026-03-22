@@ -12,326 +12,90 @@ body {background:#fff; color:#001f4d; line-height:1.7;}
 /* HEADER */
 header {
   height:100vh;
-  background: url('https://i.imgur.com/wQxGZcF.jpg') center/cover no-repeat;
+  background: #001a33;
   display:flex; flex-direction:column; justify-content:center; align-items:center;
   text-align:center; color:#fff; position:relative;
 }
-header::after {
-  content:''; position:absolute; top:0; left:0; width:100%; height:100%;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,34,68,0.8));
-}
-header h1 {
-  font-size:4rem;
-  margin-bottom:15px;
-  position:relative;
-  z-index:1;
-  animation: floatGlow 3s ease-in-out infinite;
-  text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
-}
-header p, header a { position:relative; z-index:1; }
-header p { font-size:1.5rem; margin-bottom:30px; }
-header a {
-  background:#00FFFF; color:#001f4d;
-  padding:15px 30px; border-radius:8px;
-  font-weight:bold; text-decoration:none;
-}
-header a:hover { background:#00b2b2; color:#fff; }
 
-@keyframes floatGlow {
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-12px);}
-}
-
-/* NAV */
-nav {
-  display:flex; justify-content:center; flex-wrap:wrap;
-  background:#002244; padding:15px 0; gap:30px;
-  position:sticky; top:0; z-index:100;
-}
-nav a {
-  color:#fff; font-weight:bold; text-decoration:none;
-  position:relative; padding:5px 0;
-}
-nav a::after {
-  content:''; height:3px; width:0; background:#00FFFF;
-  position:absolute; bottom:100%; left:0; transition:0.3s;
-}
-nav a:hover::after { width:100%; }
-nav a:hover { color:#00FFFF; }
-
-/* SECTION */
-section {
-  padding:70px 20px;
-  text-align:center;
-  max-width:1200px;
-  margin:0 auto;
-}
-section h2 {
-  font-size:2.4rem;
-  margin-bottom:25px;
-  color:#003366;
-}
-section h2::after {
-  content:''; display:block;
-  width:60px; height:4px;
-  background:#00FFFF;
-  margin:10px auto;
-}
-
-.image-block {
-  margin:25px auto;
-  max-width:900px;
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow:0 5px 15px rgba(0,0,0,0.2);
-}
-.image-block img {
-  width:100%;
-  transition:0.4s;
-}
-.image-block img:hover {
-  transform:scale(1.05);
-}
-
-/* SERVICES GRID */
-.services-grid {
-  display:flex;
-  flex-wrap:wrap;
-  gap:30px;
-  justify-content:center;
-}
-
-.service-card {
-  flex:0 1 calc(50% - 30px);
-  background:#f9f9f9;
-  border-radius:12px;
-  padding:20px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
-
-  /* animation base */
-  opacity:0;
-  transform:translateY(40px);
-  transition:all 0.6s ease;
-}
-
-.service-card.show {
-  opacity:1;
-  transform:translateY(0);
-}
-
-.service-card:hover {
-  transform:translateY(-8px);
-}
-
-.service-card h3 {
-  margin:15px 0;
-  color:#003366;
-}
-
-.service-card img {
-  width:100%;
-  height:180px;
-  object-fit:cover;
-  border-radius:8px;
-}
-
-/* CONTACT */
-.contact form {
-  max-width:600px;
-  margin:20px auto;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-}
-.contact input, .contact textarea {
-  padding:14px;
-  border-radius:6px;
-  border:1px solid #003366;
-}
-.contact button {
-  padding:15px;
-  background:#00FFFF;
-  border:none;
-  font-weight:bold;
-}
-
-/* FOOTER */
-footer {
-  text-align:center;
-  padding:30px;
-  background:#002244;
-  color:#fff;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  .service-card { flex:100%; }
-  header h1 { font-size:2.8rem; }
-}
-  /* Floating Background Text */
+/* Floating names */
 .floating-bg {
   position:absolute;
-  top:0;
-  left:0;
   width:100%;
   height:100%;
   overflow:hidden;
   z-index:0;
 }
-
 .floating-bg span {
   position:absolute;
   color:rgba(255,255,255,0.08);
   font-size:2rem;
-  white-space:nowrap;
   animation: floatNames 20s linear infinite;
 }
-
-/* Random positions */
-.floating-bg span:nth-child(1){ top:10%; left:5%; animation-duration:22s;}
-.floating-bg span:nth-child(2){ top:30%; left:70%; animation-duration:18s;}
-.floating-bg span:nth-child(3){ top:50%; left:20%; animation-duration:25s;}
-.floating-bg span:nth-child(4){ top:70%; left:80%; animation-duration:20s;}
-.floating-bg span:nth-child(5){ top:80%; left:10%; animation-duration:23s;}
-.floating-bg span:nth-child(6){ top:20%; left:40%; animation-duration:19s;}
-.floating-bg span:nth-child(7){ top:60%; left:60%; animation-duration:21s;}
-.floating-bg span:nth-child(8){ top:40%; left:10%; animation-duration:24s;}
-.floating-bg span:nth-child(9){ top:75%; left:50%; animation-duration:26s;}
-.floating-bg span:nth-child(10){ top:15%; left:85%; animation-duration:17s;}
+.floating-bg span:nth-child(1){ top:10%; left:5%;}
+.floating-bg span:nth-child(2){ top:30%; left:70%;}
+.floating-bg span:nth-child(3){ top:50%; left:20%;}
+.floating-bg span:nth-child(4){ top:70%; left:80%;}
+.floating-bg span:nth-child(5){ top:80%; left:10%;}
+.floating-bg span:nth-child(6){ top:20%; left:40%;}
+.floating-bg span:nth-child(7){ top:60%; left:60%;}
+.floating-bg span:nth-child(8){ top:40%; left:10%;}
+.floating-bg span:nth-child(9){ top:75%; left:50%;}
+.floating-bg span:nth-child(10){ top:15%; left:85%;}
 
 @keyframes floatNames {
-  0% { transform: translateY(0px); }
+  0% { transform: translateY(0); }
   50% { transform: translateY(-40px); }
-  100% { transform: translateY(0px); }
+  100% { transform: translateY(0); }
 }
 
-/* Make sure content stays on top */
-header h1, header p, header a {
-  position:relative;
+/* Header text */
+header h1 {
+  font-size:4rem;
   z-index:1;
-}</style>
-</head>
+  animation: floatGlow 3s ease-in-out infinite;
+  text-shadow: 0 0 10px #00FFFF;
+}
+header p, header a { z-index:1; position:relative; }
 
-<body>
-
-<header>
-  <<div class="floating-bg">
-    <span>Siemens</span>
-    <span>Allen-Bradley</span>
-    <span>Schneider</span>
-    <span>Mitsubishi</span>
-    <span>Omron</span>
-    <span>Tridium Niagara</span>
-    <span>EasyIO</span>
-    <span>Ignition</span>
-    <span>Citect SCADA</span>
-    <span>WinCC</span>
-  </div>
-
-  <h1><span style="color:#00FFFF;">Eco</span>ControlSolution</h1>
-  <p>Industrial Automation | PLCs | SCADA | DDC</p>
-  <a href="#contact">Get in Touch</a>
-</header>
-
-<nav>
-  <a href="#overview">Overview</a>
-  <a href="#components">Components</a>
-  <a href="#services">Services</a>
-  <a href="#benefits">Benefits</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<section id="overview">
-  <h2>Industrial Control Systems — What We Do</h2>
-  <p>We design and implement advanced industrial control systems using proven hardware and software.</p>
-  <div class="image-block">
-    <img src="https://i.imgur.com/6rD9xTr.jpg">
-  </div>
-</section>
-
-<section id="components">
-  <h2>Key System Components</h2>
-  <p>PLCs, SCADA, sensors, actuators and operator interfaces.</p>
-  <div class="image-block">
-    <img src="https://i.imgur.com/qWy8rK2.jpg">
-  </div>
-</section>
-
-<section id="services">
-  <h2>Our Automation Services</h2>
-
-  <div class="services-grid">
-
-    <div class="service-card">
-      <img src="https://i.imgur.com/vD4HWv8.jpg">
-      <h3>PLC Services</h3>
-      <p>Programming, commissioning, troubleshooting and upgrades.</p>
-    </div>
-
-    <div class="service-card">
-      <img src="https://i.imgur.com/q4uge5x.jpg">
-      <h3>SCADA & HMI</h3>
-      <p>Design and maintenance of SCADA platforms.</p>
-    </div>
-
-    <div class="service-card">
-      <img src="https://honeywell.scene7.com/is/image/honeywell/Front%20View%20%28Lights%20On%29%201040x6811">
-      <h3>Niagara DDC</h3>
-      <p>Building automation & HVAC integration.</p>
-    </div>
-
-    <div class="service-card">
-      <img src="https://regulatorautomation.com.au/cdn/shop/products/FS-32_RA_09377484-cda9-41da-989e-47d3a6b5173b.png">
-      <h3>EasyIO DDC</h3>
-      <p>BACnet/IP controllers for energy systems.</p>
-    </div>
-
-    <div class="service-card">
-      <img src="https://i.imgur.com/F5b9pV6.jpg">
-      <h3>Automation Support</h3>
-      <p>Commissioning, troubleshooting & remote support.</p>
-    </div>
-
-  </div>
-</section>
-
-<section id="benefits">
-  <h2>Why Industrial Automation Matters</h2>
-  <p>Improves efficiency, safety and reduces downtime.</p>
-</section>
-
-<section id="contact" class="contact">
-  <h2>Contact Us</h2>
-  <form id="contactForm">
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <textarea placeholder="Your Query" required></textarea>
-    <button type="submit">Submit</button>
-  </form>
-</section>
-
-<footer>
-  &copy; 2026 EcoControlSolution
-</footer>
-
-<script>
-const cards = document.querySelectorAll('.service-card');
-
-function revealCards() {
-  const trigger = window.innerHeight * 0.85;
-
-  cards.forEach((card, i) => {
-    if(card.getBoundingClientRect().top < trigger){
-      setTimeout(() => {
-        card.classList.add('show');
-      }, i * 150);
-    }
-  });
+@keyframes floatGlow {
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
 }
 
-window.addEventListener('scroll', revealCards);
-revealCards();
-</script>
+header a {
+  background:#00FFFF;
+  color:#001f4d;
+  padding:15px 30px;
+  border-radius:8px;
+  text-decoration:none;
+}
 
-</body>
-</html>
+/* NAV */
+nav {
+  display:flex; justify-content:center;
+  background:#002244; padding:15px; gap:30px;
+}
+nav a { color:#fff; text-decoration:none; }
+
+/* NEW LIGHT BLUE SECTION */
+.brand-bg {
+  position:relative;
+  background:#e6f7ff;
+  overflow:hidden;
+}
+
+.brand-bg::before {
+  content:"EcoControlSolution EcoControlSolution EcoControlSolution EcoControlSolution EcoControlSolution EcoControlSolution EcoControlSolution EcoControlSolution EcoControlSolution";
+  position:absolute;
+  top:0;
+  left:0;
+  width:200%;
+  height:100%;
+  font-size:3rem;
+  color:rgba(0,0,0,0.05);
+  line-height:3rem;
+  transform:rotate(-15deg);
+  pointer-events:none;
+}
+
+/* SECTION */
