@@ -1,162 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ECO Control Solution</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECO Control Solution</title>
+  <style>
+    /* Reset and basic styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-<style>
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0f172a;
-    color: #e5e7eb;
-}
+    body {
+      background-color: #001f4d; /* dark blue */
+      color: #F0F0F0; /* light gray for visibility */
+      line-height: 1.6;
+    }
 
-/* Header */
-header {
-    background: url('https://images.unsplash.com/photo-1581091215367-59ab6b8fbd1b') no-repeat center/cover;
-    padding: 100px 20px;
-    text-align: center;
-    animation: fadeIn 2s ease;
-}
+    header {
+      padding: 20px;
+      text-align: center;
+      background-color: #003366;
+    }
 
-header h1 {
-    font-size: 42px;
-    margin: 0;
-}
+    header h1 {
+      font-size: 2rem;
+      color: #FFFFFF; /* white for header */
+    }
 
-header p {
-    font-size: 18px;
-}
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #002244;
+      padding: 10px 0;
+    }
 
-/* Sections */
-section {
-    padding: 50px 20px;
-    max-width: 1100px;
-    margin: auto;
-}
+    nav a {
+      color: #F0F0F0; /* light gray for links */
+      text-decoration: none;
+      margin: 0 20px;
+      position: relative;
+      padding: 5px 0;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
 
-h2 {
-    color: #38bdf8;
-}
+    /* Drop-up line effect */
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 3px;
+      background: #00FFFF; /* bright cyan line */
+      position: absolute;
+      bottom: 100%; /* drop-up effect */
+      left: 0;
+      transition: width 0.3s;
+    }
 
-/* Services grid */
-.services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
+    nav a:hover::after {
+      width: 100%;
+    }
 
-/* Cards */
-.card {
-    background: #1e293b;
-    padding: 20px;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
+    nav a:hover {
+      color: #00FFFF; /* link color changes on hover */
+    }
 
-/* Hover effect */
-.card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-}
+    main {
+      padding: 40px 20px;
+      text-align: center;
+    }
 
-/* Image zoom on hover */
-.card img {
-    width: 100%;
-    border-radius: 8px;
-    transition: transform 0.4s ease;
-}
+    main h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #FFFFFF; /* headings white */
+    }
 
-.card:hover img {
-    transform: scale(1.1);
-}
+    main p {
+      max-width: 700px;
+      margin: 0 auto 20px auto;
+      color: #E0E0E0; /* paragraph slightly lighter gray */
+    }
 
-/* Fade-in animation */
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
-}
+    .contact a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #00FFFF; /* bright cyan button */
+      color: #001f4d; /* dark blue text inside button */
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+    }
 
-/* Button */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #38bdf8;
-    color: #000;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    transition: 0.3s;
-}
+    .contact a:hover {
+      background-color: #00B2B2; /* darker cyan hover */
+      color: #FFFFFF;
+    }
 
-.btn:hover {
-    background: #0ea5e9;
-    transform: scale(1.05);
-}
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #002244;
+      color: #F0F0F0;
+    }
 
-/* Footer */
-footer {
-    background: #020617;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-}
-</style>
+  </style>
 </head>
-
 <body>
 
-<header>
+  <header>
     <h1>ECO Control Solution</h1>
-    <p>Reliable automation solutions for industry and smart buildings</p>
-</header>
+  </header>
 
-<section>
-    <h2>Our Services</h2>
-    <div class="services">
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1581093588401-12a6b9d0c75c">
-            <h3>Industrial Automation</h3>
-            <p>PLC, SCADA, and process control solutions tailored for industrial systems.</p>
-        </div>
+  <main>
+    <section id="services">
+      <h2>Our Services</h2>
+      <p>We provide industrial automation and building management control systems with sensors and automation products for efficiency and safety.</p>
+    </section>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
-            <h3>Building Management Systems</h3>
-            <p>Smart HVAC, energy monitoring, and building automation solutions.</p>
-        </div>
+    <section id="about">
+      <h2>About ECO Control Solution</h2>
+      <p>Our company specializes in smart control solutions for industrial and commercial buildings, delivering tailored automation solutions that fit your needs.</p>
+    </section>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789">
-            <h3>Sensors & Controls</h3>
-            <p>Supply and integration of sensors, controllers, and automation devices.</p>
-        </div>
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <p>Have questions or want a quote? Reach out directly via email:</p>
+      <a href="mailto:info@ecocontrol.com">info@ecocontrol.com</a>
+    </section>
+  </main>
 
-    </div>
-</section>
-
-<section>
-    <h2>About Us</h2>
-    <p>
-        We provide practical and reliable automation and control solutions for industrial and commercial applications.
-        Our focus is on efficiency, integration, and long-term performance.
-    </p>
-</section>
-
-<section>
-    <h2>Contact</h2>
-    <p>Email: info@ecocontrolsolution.com</p>
-    <p>Location: Perth, WA</p>
-</section>
-
-<footer>
-    <p>© 2026 ECO Control Solution</p>
-</footer>
+  <footer>
+    &copy; 2026 ECO Control Solution. All rights reserved.
+  </footer>
 
 </body>
 </html>
