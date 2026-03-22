@@ -4,38 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EcoControlSolution – Industrial Automation</title>
-
 <style>
-/* General Reset */
 * {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
 body {background:#fff; color:#001f4d; line-height:1.7;}
 
-/* HEADER / HERO */
+/* HERO HEADER */
 header {
   height:100vh;
   background:#001a33;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  text-align:center; position:relative; overflow:hidden;
 }
+header h1 { font-size:4rem; z-index:1; color:#00FFFF; text-shadow:0 0 15px #00FFFF; animation: floatGlow 3s ease-in-out infinite; }
+@keyframes floatGlow {0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+header p { font-size:1.5rem; margin:15px 0 25px 0; z-index:1; color:#fff; }
+header a { z-index:1; text-decoration:none; padding:15px 30px; border-radius:8px; background:#00FFFF; color:#001f4d; font-weight:bold; transition:0.3s;}
+header a:hover { background:#00b2b2; color:#fff; }
 
-/* Floating Tech Names */
+/* FLOATING BACKGROUND NAMES */
 .floating-bg {
-  position:absolute;
-  width:100%;
-  height:100%;
-  overflow:hidden;
-  z-index:0;
+  position:absolute; width:100%; height:100%; overflow:hidden; z-index:0;
 }
 .floating-bg span {
-  position:absolute;
-  color:rgba(255,255,255,0.08);
-  font-size:2rem;
-  animation: floatNames 20s linear infinite;
+  position:absolute; color:rgba(255,255,255,0.08); font-size:2rem; animation: floatNames 20s linear infinite;
 }
 .floating-bg span:nth-child(1){ top:10%; left:5%; animation-duration:22s;}
 .floating-bg span:nth-child(2){ top:30%; left:70%; animation-duration:18s;}
@@ -47,135 +38,38 @@ header {
 .floating-bg span:nth-child(8){ top:40%; left:10%; animation-duration:24s;}
 .floating-bg span:nth-child(9){ top:75%; left:50%; animation-duration:26s;}
 .floating-bg span:nth-child(10){ top:15%; left:85%; animation-duration:17s;}
-
-@keyframes floatNames {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-40px); }
-  100% { transform: translateY(0); }
-}
-
-/* Header Title and Button */
-header h1 {
-  font-size:4rem;
-  z-index:1;
-  color:#00FFFF;
-  animation: floatGlow 3s ease-in-out infinite;
-  text-shadow: 0 0 15px #00FFFF;
-}
-@keyframes floatGlow {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-header p {
-  font-size:1.5rem;
-  margin:15px 0 25px 0;
-  z-index:1;
-  color:#fff;
-}
-
-header a {
-  z-index:1;
-  text-decoration:none;
-  padding:15px 30px;
-  border-radius:8px;
-  background:#00FFFF;
-  color:#001f4d;
-  font-weight:bold;
-  transition:0.3s;
-}
-header a:hover { background:#00b2b2; color:#fff; }
+@keyframes floatNames {0%{transform:translateY(0);}50%{transform:translateY(-40px);}100%{transform:translateY(0);}}
 
 /* NAVIGATION */
-nav {
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  background:#002244;
-  padding:15px;
-  gap:30px;
-  position:sticky;
-  top:0;
-  z-index:100;
-}
-nav a {
-  color:#fff;
-  text-decoration:none;
-  font-weight:bold;
-  position:relative;
-  padding:5px 0;
-}
-nav a::after {
-  content:'';
-  display:block;
-  height:3px;
-  width:0;
-  background:#00FFFF;
-  position:absolute;
-  bottom:100%;
-  left:0;
-  transition:width 0.3s;
-}
-nav a:hover::after { width:100%; }
-nav a:hover { color:#00FFFF; }
+nav { display:flex; justify-content:center; flex-wrap:wrap; background:#002244; padding:15px; gap:30px; position:sticky; top:0; z-index:100;}
+nav a { color:#fff; font-weight:bold; text-decoration:none; position:relative; padding:5px 0; transition:color 0.3s;}
+nav a::after { content:''; display:block; height:3px; width:0; background:#00FFFF; position:absolute; bottom:100%; left:0; transition:width 0.3s;}
+nav a:hover::after { width:100%; } nav a:hover { color:#00FFFF;}
 
-/* GENERAL SECTION */
-section {
-  padding:70px 20px;
-  text-align:center;
-  max-width:1200px;
-  margin:0 auto;
-}
-section h2 {
-  font-size:2.4rem;
-  margin-bottom:25px;
-  color:#003366;
-  position:relative;
-}
-section h2::after {
-  content:'';
-  display:block;
-  width:60px;
-  height:4px;
-  background:#00FFFF;
-  margin:10px auto 0;
-  border-radius:3px;
-}
+/* SECTIONS */
+section { padding:70px 20px; text-align:center; max-width:1200px; margin:0 auto; }
+section h2 { font-size:2.4rem; margin-bottom:25px; color:#003366; position:relative;}
+section h2::after { content:''; display:block; width:60px; height:4px; background:#00FFFF; margin:10px auto 0; border-radius:3px; }
 section p { max-width:800px; margin:15px auto 25px auto; font-size:1.05rem; color:#001f4d; }
-
 .image-block { margin:25px auto; max-width:900px; overflow:hidden; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.2);}
 .image-block img { width:100%; height:auto; transition: transform 0.5s, filter 0.3s;}
 .image-block img:hover { transform:scale(1.05); filter: brightness(1.1); }
 
 /* MOTION TEXT & TOOLTIP */
 .motion-text { display:inline-block; transition: transform 0.3s, color 0.3s; cursor:pointer;}
-.motion-text:hover { transform: translateY(-10px); color:#00FFFF; }
-
+.motion-text:hover { transform: translateY(-10px); color:#00FFFF;}
 .tooltip { position:relative; display:inline-block; cursor:pointer;}
 .tooltip .tooltiptext { visibility:hidden; width:220px; background-color:#001f4d; color:#fff; text-align:center; padding:10px; border-radius:6px; position:absolute; z-index:1; bottom:125%; left:50%; margin-left:-110px; opacity:0; transition: opacity 0.3s;}
 .tooltip:hover .tooltiptext { visibility:visible; opacity:1; }
 
+/* BRAND BACKGROUND AFTER LANDING */
+.brand-bg { position:relative; background:#e6f7ff; overflow:hidden; padding:80px 20px; text-align:center; margin-bottom:40px;}
+.brand-bg::before { content:"EcoControlSolution EcoControlSolution EcoControlSolution EcoControlSolution EcoControlSolution"; position:absolute; top:0; left:0; width:200%; height:100%; font-size:3rem; color:rgba(0,0,0,0.05); line-height:3rem; transform:rotate(-15deg); pointer-events:none; }
+
 /* SERVICES GRID */
-.services-grid {
-  display:flex;
-  flex-wrap:wrap;
-  gap:30px;
-  justify-content:center;
-}
-.service-card {
-  flex:0 1 calc(50% - 30px);
-  background:#f9f9f9;
-  border-radius:12px;
-  overflow:hidden;
-  text-align:center;
-  padding:20px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
+.services-grid { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; }
+.service-card { flex:0 1 calc(50% - 30px); background:#f9f9f9; border-radius:12px; overflow:hidden; text-align:center; padding:20px; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;}
+.service-card:hover { transform: translateY(-8px); box-shadow:0 10px 25px rgba(0,0,0,0.15);}
 .service-card img { width:100%; height:180px; object-fit:cover; border-radius:8px; }
 .service-card h3 { margin:15px 0; color:#003366; }
 .service-card p { font-size:0.95rem; color:#001f4d; }
@@ -185,8 +79,6 @@ section p { max-width:800px; margin:15px auto 25px auto; font-size:1.05rem; colo
 .contact input, .contact textarea { padding:14px; border-radius:6px; border:1px solid #003366; width:100%; font-size:1rem;}
 .contact button { padding:15px; border-radius:6px; border:none; background:#00FFFF; color:#001f4d; font-weight:bold; cursor:pointer; font-size:1rem; transition:background 0.3s;}
 .contact button:hover { background:#00b2b2; color:#fff; }
-
-/* CHATBOT */
 .chatbot { max-width:400px; margin:30px auto; padding:20px; border:1px solid #003366; border-radius:10px; background:#f0f0f0;}
 .chatbot h3 { color:#003366; margin-bottom:15px; text-align:center; }
 .chatbot input { padding:10px; margin-top:5px; width:100%; border-radius:6px; border:1px solid #003366;}
@@ -196,60 +88,29 @@ section p { max-width:800px; margin:15px auto 25px auto; font-size:1.05rem; colo
 /* FOOTER */
 footer { text-align:center; padding:30px 10px; background:#002244; color:#fff; font-size:0.95rem; }
 
-/* BRAND BACKGROUND SECTION */
-.brand-bg {
-  position:relative;
-  background:#e6f7ff;
-  overflow:hidden;
-  padding:80px 20px;
-  text-align:center;
-}
-.brand-bg::before {
-  content:"EcoControlSolution EcoControlSolution EcoControlSolution EcoControlSolution EcoControlSolution EcoControlSolution EcoControlSolution EcoControlSolution EcoControlSolution";
-  position:absolute;
-  top:0;
-  left:0;
-  width:200%;
-  height:100%;
-  font-size:3rem;
-  color:rgba(0,0,0,0.05);
-  line-height:3rem;
-  transform:rotate(-15deg);
-  pointer-events:none;
-}
+/* MEDIA */
+@media(max-width:768px){ nav{gap:15px;} header h1{font-size:2.8rem;} header p{font-size:1.2rem;} section h2{font-size:2rem;} .service-card { flex:0 1 100%; } }
 
-/* MEDIA QUERIES */
-@media(max-width:768px){
-  .service-card { flex:0 1 100%; }
-  header h1 { font-size:2.8rem; }
-  header p { font-size:1.2rem; }
-  section h2 { font-size:2rem; }
-}
 </style>
 </head>
-
 <body>
 
 <header>
   <div class="floating-bg">
-    <span>EcoControlSolution</span>
-    <span>Industrial PLC</span>
-    <span>Industrial Automation</span>
-    <span>HMIs</span>
-    <span>BMS</span>
-    <span>Trending</span>
-    <span>Alarms/span>
-    <span>Nortifications</span>
-    <span>Data Communication</span>
+    <span>Siemens</span><span>Allen-Bradley</span><span>Schneider</span><span>Mitsubishi</span>
+    <span>Omron</span><span>Tridium Niagara</span><span>EasyIO</span><span>Ignition</span>
+    <span>Citect</span><span>WinCC</span>
   </div>
-  <h1><span style="color:#00FFFF;">Eco</span>ControlSolution</h1>
-  <p>Industrial Automation | PLCs | SCADA | DDC</p>
+  <h1>EcoControlSolution</h1>
+  <p>Industrial Automation | PLCs | SCADA | Sensors | Actuators</p>
   <a href="#contact">Get in Touch</a>
 </header>
 
 <nav>
   <a href="#overview">Overview</a>
+  <a href="#components">Components</a>
   <a href="#services">Services</a>
+  <a href="#benefits">Benefits</a>
   <a href="#contact">Contact</a>
 </nav>
 
@@ -259,61 +120,75 @@ footer { text-align:center; padding:30px 10px; background:#002244; color:#fff; f
   <p>Delivering reliable PLC, SCADA, and DDC solutions for industrial and building automation systems.</p>
 </section>
 
-<!-- OVERVIEW -->
 <section id="overview">
-  <h2>Industrial Control Systems — Overview</h2>
+  <h2>Industrial Control Systems — What We Do</h2>
   <p>We design and implement advanced industrial control systems using proven hardware and software to automate manufacturing and process facilities.</p>
   <div class="image-block">
-    <img src="https://i.imgur.com/6rD9xTr.jpg" alt="Control room">
+    <img src="https://i.imgur.com/6rD9xTr.jpg" alt="Control room with SCADA displays">
+  </div>
+  <p>Our systems include <span class="motion-text">PLCs</span>, <span class="motion-text">SCADA</span> platforms, field sensors, actuators, and operator interfaces.</p>
+</section>
+
+<section id="components">
+  <h2>Key System Components</h2>
+  <p class="tooltip">Programmable Logic Controllers (PLCs)
+    <span class="tooltiptext">The "brains" of automation — executes control logic in real-time.</span>
+  </p>
+  <p class="tooltip">SCADA & HMIs
+    <span class="tooltiptext">Monitor and control systems remotely with dashboards.</span>
+  </p>
+  <p class="tooltip">Sensors & Actuators
+    <span class="tooltiptext">Sensors measure variables, actuators perform physical actions.</span>
+  </p>
+  <div class="image-block">
+    <img src="https://i.imgur.com/qWy8rK2.jpg" alt="PLC hardware rack">
   </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services">
   <h2>Our Automation Services</h2>
   <div class="services-grid">
     <div class="service-card">
       <img src="https://i.imgur.com/vD4HWv8.jpg" alt="PLC Services">
       <h3>PLC Services</h3>
-      <p>Programming, commissioning, and troubleshooting for Allen-Bradley, Siemens, Schneider, Mitsubishi, and Omron PLCs.</p>
+      <p>Programming, commissioning, troubleshooting and upgrades for Allen-Bradley, Siemens, Schneider, Mitsubishi, Omron, and more.</p>
     </div>
     <div class="service-card">
       <img src="https://i.imgur.com/q4uge5x.jpg" alt="SCADA Services">
-      <h3>SCADA & HMI</h3>
-      <p>Design, configuration, and maintenance of SCADA platforms like Ignition, Citect, FactoryTalk, and WinCC with dashboards and alarms.</p>
+      <h3>SCADA & HMI Services</h3>
+      <p>Design, configuration, and maintenance of SCADA platforms and HMIs with real-time monitoring and dashboards.</p>
     </div>
     <div class="service-card">
       <img src="https://honeywell.scene7.com/is/image/honeywell/Front%20View%20%28Lights%20On%29%201040x6811" alt="Tridium Niagara Services">
-      <h3>Tridium Niagara DDC</h3>
-      <p>Integration, programming, and commissioning of Niagara DDC controllers for building automation and HVAC systems.</p>
+      <h3>Tridium Niagara DDC Services</h3>
+      <p>Installation, programming, and integration of Niagara controllers for building automation, HVAC, and energy management.</p>
     </div>
     <div class="service-card">
       <img src="https://regulatorautomation.com.au/cdn/shop/products/FS-32_RA_09377484-cda9-41da-989e-47d3a6b5173b.png" alt="EasyIO Services">
-      <h3>EasyIO DDC</h3>
-      <p>Configuration, integration, and support for EasyIO BACnet/IP controllers and energy management systems.</p>
+      <h3>EasyIO DDC Services</h3>
+      <p>Configuration, integration, and support for EasyIO BACnet/IP controllers for HVAC and monitoring systems.</p>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="contact">
   <h2>Contact Us</h2>
-  <p>Reach out to us for quotes, services, or queries.</p>
+  <p>Reach out for quotes or queries.</p>
   <form id="contactForm">
     <input type="text" placeholder="Your Name" required>
     <input type="email" placeholder="Your Email" required>
     <textarea placeholder="Your Message" rows="5" required></textarea>
     <button type="submit">Submit</button>
   </form>
-
   <div class="chatbot">
     <h3>Chat with us</h3>
     <input type="text" id="chatInput" placeholder="Type your message">
     <button onclick="replyChat()">Send</button>
     <div id="chatOutput" style="margin-top:10px;"></div>
   </div>
-
-  <p style="margin-top:25px; font-weight:bold;">Email: <a href="mailto:admin@ecocontrolsolution.com">admin@ecocontrolsolution.com</a> | Location: Perth, Australia</p>
+  <p style="margin-top:20px; font-weight:bold;">
+    Email: <a href="mailto:admin@ecocontrolsolution.com">admin@ecocontrolsolution.com</a> | Location: Perth, Australia
+  </p>
 </section>
 
 <footer>
@@ -322,19 +197,20 @@ footer { text-align:center; padding:30px 10px; background:#002244; color:#fff; f
 
 <script>
 function replyChat(){
-  const input = document.getElementById('chatInput').value;
-  const output = document.getElementById('chatOutput');
+  const input=document.getElementById('chatInput').value;
+  const output=document.getElementById('chatOutput');
   if(input.trim()==='') return;
-  let response = "Thank you! Our team will respond soon.";
+  let response="Thank you! Our team will respond soon.";
   if(input.toLowerCase().includes('price')) response="Pricing depends on system type and size, please provide details.";
   output.innerHTML += "<p><strong>You:</strong> "+input+"</p><p><strong>Bot:</strong> "+response+"</p>";
   document.getElementById('chatInput').value='';
 }
 
 document.getElementById('contactForm').addEventListener('submit', function(e){
-  e.preventDefault(); alert("Thank you for your query! We will contact you soon."); this.reset();
+  e.preventDefault();
+  alert("Thank you for your query! We will contact you soon.");
+  this.reset();
 });
 </script>
-
 </body>
 </html>
