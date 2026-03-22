@@ -168,12 +168,66 @@ footer {
   .service-card { flex:100%; }
   header h1 { font-size:2.8rem; }
 }
-</style>
+  /* Floating Background Text */
+.floating-bg {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  z-index:0;
+}
+
+.floating-bg span {
+  position:absolute;
+  color:rgba(255,255,255,0.08);
+  font-size:2rem;
+  white-space:nowrap;
+  animation: floatNames 20s linear infinite;
+}
+
+/* Random positions */
+.floating-bg span:nth-child(1){ top:10%; left:5%; animation-duration:22s;}
+.floating-bg span:nth-child(2){ top:30%; left:70%; animation-duration:18s;}
+.floating-bg span:nth-child(3){ top:50%; left:20%; animation-duration:25s;}
+.floating-bg span:nth-child(4){ top:70%; left:80%; animation-duration:20s;}
+.floating-bg span:nth-child(5){ top:80%; left:10%; animation-duration:23s;}
+.floating-bg span:nth-child(6){ top:20%; left:40%; animation-duration:19s;}
+.floating-bg span:nth-child(7){ top:60%; left:60%; animation-duration:21s;}
+.floating-bg span:nth-child(8){ top:40%; left:10%; animation-duration:24s;}
+.floating-bg span:nth-child(9){ top:75%; left:50%; animation-duration:26s;}
+.floating-bg span:nth-child(10){ top:15%; left:85%; animation-duration:17s;}
+
+@keyframes floatNames {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-40px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Make sure content stays on top */
+header h1, header p, header a {
+  position:relative;
+  z-index:1;
+}</style>
 </head>
 
 <body>
 
 <header>
+  <<div class="floating-bg">
+    <span>Siemens</span>
+    <span>Allen-Bradley</span>
+    <span>Schneider</span>
+    <span>Mitsubishi</span>
+    <span>Omron</span>
+    <span>Tridium Niagara</span>
+    <span>EasyIO</span>
+    <span>Ignition</span>
+    <span>Citect SCADA</span>
+    <span>WinCC</span>
+  </div>
+
   <h1><span style="color:#00FFFF;">Eco</span>ControlSolution</h1>
   <p>Industrial Automation | PLCs | SCADA | DDC</p>
   <a href="#contact">Get in Touch</a>
