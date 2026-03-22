@@ -3,26 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EcoControlSolution – Industrial Automation & Control</title>
+<title>EcoControlSolution – Industrial Automation</title>
 
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
-  body { background:#ffffff; color:#001f4d; line-height:1.7;}
+  * {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+  body {background:#fff; color:#001f4d; line-height:1.7;}
 
-  /* Header with background image */
+  /* Hero Header / Landing */
   header {
-    background: url('https://images.unsplash.com/photo-1611599534351-107e6182736b?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
-    text-align:center; padding:120px 20px; color:#fff; position:relative; overflow:hidden;
+    height:100vh;
+    background: url('https://i.imgur.com/wQxGZcF.jpg') center/cover no-repeat;
+    display:flex; flex-direction:column; justify-content:center; align-items:center;
+    text-align:center; color:#fff; position:relative;
   }
   header::after {
     content:''; position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5);
   }
-  header h1, header p { position:relative; z-index:1; }
-  header h1 { font-size:3rem; margin-bottom:10px; animation: floatText 3s ease-in-out infinite; }
-  header p { font-size:1.3rem; }
-  @keyframes floatText { 0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);} }
+  header h1, header p, header a {
+    position:relative; z-index:1;
+  }
+  header h1 { font-size:4rem; margin-bottom:15px; animation: floatText 3s ease-in-out infinite; }
+  header p { font-size:1.5rem; margin-bottom:30px; }
+  header a { background:#00FFFF; color:#001f4d; padding:15px 30px; border-radius:8px; font-weight:bold; text-decoration:none; transition:0.3s; }
+  header a:hover { background:#00b2b2; color:#fff; }
+  @keyframes floatText {0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);} }
 
-  nav { display:flex; justify-content:center; flex-wrap:wrap; background:#002244; padding:15px 0; gap:30px;}
+  nav { display:flex; justify-content:center; flex-wrap:wrap; background:#002244; padding:15px 0; gap:30px; position:sticky; top:0; z-index:100;}
   nav a { color:#fff; font-weight:bold; text-decoration:none; position:relative; padding:5px 0; transition:color 0.3s;}
   nav a::after { content:''; display:block; height:3px; width:0; background:#00FFFF; position:absolute; bottom:100%; left:0; transition:width 0.3s; }
   nav a:hover::after { width:100%; } nav a:hover { color:#00FFFF; }
@@ -32,7 +38,6 @@
   section h2::after { content:''; display:block; width:60px; height:4px; background:#00FFFF; margin:10px auto 0; border-radius:3px; }
   section p { max-width:800px; margin:15px auto 25px auto; font-size:1.05rem; color:#001f4d; }
 
-  /* Image block */
   .image-block { margin:25px auto; max-width:900px; overflow:hidden; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.2);}
   .image-block img { width:100%; height:auto; transition: transform 0.5s, filter 0.3s;}
   .image-block img:hover { transform:scale(1.05); filter: brightness(1.1); }
@@ -57,8 +62,7 @@
 
   footer { text-align:center; padding:30px 10px; background:#002244; color:#fff; font-size:0.95rem;}
 
-  @media(max-width:768px){ nav{gap:15px;} header h1{font-size:2.2rem;} section h2{font-size:2rem;} }
-
+  @media(max-width:768px){ nav{gap:15px;} header h1{font-size:2.8rem;} header p{font-size:1.2rem;} section h2{font-size:2rem;} }
 </style>
 </head>
 <body>
@@ -66,6 +70,7 @@
 <header>
   <h1>EcoControlSolution</h1>
   <p>Industrial Automation | PLCs | SCADA | Sensors | Actuators</p>
+  <a href="#contact">Get in Touch</a>
 </header>
 
 <nav>
@@ -78,54 +83,45 @@
 <section id="overview">
   <h2>Industrial Control Systems — What We Do</h2>
   <p>We design and implement advanced industrial control systems using proven hardware and software to automate manufacturing and process facilities.</p>
-
   <div class="image-block">
-    <img src="https://images.unsplash.com/photo-1581091012184-ef1382275f0e?auto=format&fit=crop&w=900&q=80" alt="Control room with SCADA displays">
+    <img src="https://i.imgur.com/6rD9xTr.jpg" alt="Control room with SCADA displays">
   </div>
-
   <p>Our systems include <span class="motion-text">PLCs</span>, <span class="motion-text">SCADA</span> platforms, field sensors, actuators, and operator interfaces.</p>
 </section>
 
 <section id="components">
   <h2>Key System Components</h2>
-
   <p class="tooltip">Programmable Logic Controllers (PLCs)
     <span class="tooltiptext">The "brains" of automation — executes control logic in real-time.</span>
   </p>
-
   <p class="tooltip">SCADA & HMIs
-    <span class="tooltiptext">Monitor and control systems remotely with alarms and dashboards.</span>
+    <span class="tooltiptext">Monitor and control systems remotely with dashboards.</span>
   </p>
-
   <p class="tooltip">Sensors & Actuators
     <span class="tooltiptext">Sensors measure variables, actuators perform physical actions.</span>
   </p>
-
   <div class="image-block">
-    <img src="https://images.unsplash.com/photo-1591084736261-7cbbd20404f1?auto=format&fit=crop&w=900&q=80" alt="PLC hardware rack">
+    <img src="https://i.imgur.com/qWy8rK2.jpg" alt="PLC hardware rack">
   </div>
 </section>
 
 <section id="benefits">
   <h2>Why Industrial Automation Matters</h2>
   <p>Automation increases production efficiency by reducing manual intervention and improving safety with real-time monitoring.</p>
-
   <div class="image-block">
-    <img src="https://images.unsplash.com/photo-1581092333932-1c0d3c6cf9ef?auto=format&fit=crop&w=900&q=80" alt="Automation benefits diagram">
+    <img src="https://i.imgur.com/7IXFvNh.jpg" alt="Automation benefits diagram">
   </div>
 </section>
 
 <section id="contact" class="contact">
   <h2>Contact Us</h2>
   <p>Leave your details and query below, and we will get back to you.</p>
-
   <form id="contactForm">
     <input type="text" placeholder="Your Name" required>
     <input type="email" placeholder="Your Email" required>
     <textarea placeholder="Your Query" rows="5" required></textarea>
     <button type="submit">Submit</button>
   </form>
-
   <div class="chatbot">
     <h3>Chat with us</h3>
     <input type="text" id="chatInput" placeholder="Type your message">
@@ -139,20 +135,18 @@
 </footer>
 
 <script>
-function replyChat() {
+function replyChat(){
   const input = document.getElementById('chatInput').value;
   const output = document.getElementById('chatOutput');
-  if(input.trim() === '') return;
+  if(input.trim()==='') return;
   let response = "Thank you! Our team will respond soon.";
-  if(input.toLowerCase().includes('price')) response = "Pricing depends on system type and size, please provide details.";
-  output.innerHTML += "<p><strong>You:</strong> " + input + "</p><p><strong>Bot:</strong> " + response + "</p>";
-  document.getElementById('chatInput').value = '';
+  if(input.toLowerCase().includes('price')) response="Pricing depends on system type and size, please provide details.";
+  output.innerHTML += "<p><strong>You:</strong> "+input+"</p><p><strong>Bot:</strong> "+response+"</p>";
+  document.getElementById('chatInput').value='';
 }
 
 document.getElementById('contactForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  alert("Thank you for your query! We will contact you soon.");
-  this.reset();
+  e.preventDefault(); alert("Thank you for your query! We will contact you soon."); this.reset();
 });
 </script>
 
