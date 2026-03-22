@@ -21,8 +21,10 @@ header::after {
   background: linear-gradient(rgba(0,0,0,0.7), rgba(0,34,68,0.8));
 }
 header h1 {
-  position:relative; z-index:1;
-  font-size:4rem; margin-bottom:15px;
+  font-size:4rem;
+  margin-bottom:15px;
+  position:relative;
+  z-index:1;
   animation: floatGlow 3s ease-in-out infinite;
   text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
 }
@@ -81,6 +83,7 @@ section h2::after {
   max-width:900px;
   border-radius:12px;
   overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 .image-block img {
   width:100%;
@@ -105,6 +108,7 @@ section h2::after {
   padding:20px;
   box-shadow:0 5px 15px rgba(0,0,0,0.1);
 
+  /* animation base */
   opacity:0;
   transform:translateY(40px);
   transition:all 0.6s ease;
@@ -171,7 +175,7 @@ footer {
 
 <header>
   <h1><span style="color:#00FFFF;">Eco</span>ControlSolution</h1>
-  <p>Industrial Automation | PLC | SCADA | DDC</p>
+  <p>Industrial Automation | PLCs | SCADA | DDC</p>
   <a href="#contact">Get in Touch</a>
 </header>
 
@@ -184,15 +188,15 @@ footer {
 </nav>
 
 <section id="overview">
-  <h2>Industrial Control Systems</h2>
-  <p>We design and implement automation systems for industrial and building environments.</p>
+  <h2>Industrial Control Systems — What We Do</h2>
+  <p>We design and implement advanced industrial control systems using proven hardware and software.</p>
   <div class="image-block">
     <img src="https://i.imgur.com/6rD9xTr.jpg">
   </div>
 </section>
 
 <section id="components">
-  <h2>Key Components</h2>
+  <h2>Key System Components</h2>
   <p>PLCs, SCADA, sensors, actuators and operator interfaces.</p>
   <div class="image-block">
     <img src="https://i.imgur.com/qWy8rK2.jpg">
@@ -200,32 +204,32 @@ footer {
 </section>
 
 <section id="services">
-  <h2>Our Services</h2>
+  <h2>Our Automation Services</h2>
 
   <div class="services-grid">
 
     <div class="service-card">
       <img src="https://i.imgur.com/vD4HWv8.jpg">
       <h3>PLC Services</h3>
-      <p>Programming & commissioning for Siemens, AB, Schneider, Mitsubishi.</p>
+      <p>Programming, commissioning, troubleshooting and upgrades.</p>
     </div>
 
     <div class="service-card">
       <img src="https://i.imgur.com/q4uge5x.jpg">
-      <h3>SCADA Systems</h3>
-      <p>Ignition, Citect, WinCC dashboards & control systems.</p>
+      <h3>SCADA & HMI</h3>
+      <p>Design and maintenance of SCADA platforms.</p>
     </div>
 
     <div class="service-card">
       <img src="https://honeywell.scene7.com/is/image/honeywell/Front%20View%20%28Lights%20On%29%201040x6811">
       <h3>Niagara DDC</h3>
-      <p>Integration of HVAC & building automation systems.</p>
+      <p>Building automation & HVAC integration.</p>
     </div>
 
     <div class="service-card">
       <img src="https://regulatorautomation.com.au/cdn/shop/products/FS-32_RA_09377484-cda9-41da-989e-47d3a6b5173b.png">
       <h3>EasyIO DDC</h3>
-      <p>BACnet/IP controllers for HVAC & energy systems.</p>
+      <p>BACnet/IP controllers for energy systems.</p>
     </div>
 
     <div class="service-card">
@@ -238,17 +242,17 @@ footer {
 </section>
 
 <section id="benefits">
-  <h2>Why Automation</h2>
+  <h2>Why Industrial Automation Matters</h2>
   <p>Improves efficiency, safety and reduces downtime.</p>
 </section>
 
 <section id="contact" class="contact">
-  <h2>Contact</h2>
+  <h2>Contact Us</h2>
   <form id="contactForm">
-    <input type="text" placeholder="Name" required>
-    <input type="email" placeholder="Email" required>
-    <textarea placeholder="Message"></textarea>
-    <button>Submit</button>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Query" required></textarea>
+    <button type="submit">Submit</button>
   </form>
 </section>
 
