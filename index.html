@@ -6,25 +6,34 @@
 <title>EcoControlSolution – Industrial Automation & Control</title>
 
 <style>
-  /* Reset & base */
+  /* Reset & Base */
   * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
   body { background: #ffffff; color: #001f4d; line-height: 1.7; }
 
+  /* Header with background image */
   header {
-    background: linear-gradient(135deg, #003366, #0066cc);
-    text-align: center; padding: 50px 20px; color: #ffffff; position: relative;
-    overflow: hidden;
+    background: url('https://images.unsplash.com/photo-1581091870625-2ecb0fc85b7c?crop=entropy&cs=tinysrgb&fit=max&w=1500') center/cover no-repeat;
+    text-align: center; padding: 120px 20px; color: #ffffff; position: relative; overflow: hidden;
   }
-  header h1 { font-size: 3rem; margin-bottom: 10px; }
-  header p { font-size: 1.2rem; }
+  header::after {
+    content: '';
+    position: absolute;
+    top:0; left:0; width:100%; height:100%;
+    background: rgba(0,0,0,0.5); /* overlay for readability */
+  }
+  header h1, header p {
+    position: relative;
+    z-index: 1;
+  }
+  header h1 { font-size: 3rem; margin-bottom: 10px; animation: floatText 3s ease-in-out infinite; }
+  header p { font-size: 1.3rem; }
 
-  /* Motion animation on header text */
-  header h1 { animation: floatText 3s ease-in-out infinite; }
   @keyframes floatText {
     0%,100% { transform: translateY(0); }
     50% { transform: translateY(-8px); }
   }
 
+  /* Navigation */
   nav {
     display: flex; justify-content: center; flex-wrap: wrap; background: #002244; padding: 15px 0; gap: 30px;
   }
@@ -37,13 +46,13 @@
   nav a:hover::after { width: 100%; }
   nav a:hover { color: #00FFFF; }
 
+  /* Sections */
   section { padding: 70px 20px; text-align: center; max-width: 1200px; margin: 0 auto; }
   section h2 { font-size: 2.4rem; margin-bottom: 25px; color: #003366; position: relative; }
   section h2::after { content: ''; display: block; width: 60px; height: 4px; background: #00FFFF; margin: 10px auto 0; border-radius: 3px; }
-
   section p { max-width: 800px; margin: 15px auto 25px auto; font-size: 1.05rem; color: #001f4d; }
 
-  /* Image blocks with hover zoom */
+  /* Images */
   .image-block { margin: 25px auto; max-width: 900px; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
   .image-block img { width: 100%; height: auto; transition: transform 0.5s, filter 0.3s; }
   .image-block img:hover { transform: scale(1.05); filter: brightness(1.1); }
@@ -52,7 +61,7 @@
   .motion-text { display: inline-block; transition: transform 0.3s, color 0.3s; cursor: pointer; }
   .motion-text:hover { transform: translateY(-10px); color: #00FFFF; }
 
-  /* Tooltip pop-up */
+  /* Tooltip */
   .tooltip { position: relative; display: inline-block; cursor: pointer; }
   .tooltip .tooltiptext { 
     visibility: hidden; width: 220px; background-color: #001f4d; color: #fff; text-align: center; 
@@ -125,7 +134,7 @@
   </p>
 
   <div class="image-block">
-    <img src="https://images.unsplash.com/photo-1581091870625-2ecb0fc85b7c?crop=entropy&cs=tinysrgb&fit=max&w=900" alt="PLC hardware rack">
+    <img src="https://images.unsplash.com/photo-1591084736261-7cbbd20404f1?crop=entropy&cs=tinysrgb&fit=max&w=900" alt="PLC hardware rack">
   </div>
 </section>
 
@@ -162,7 +171,7 @@
 </footer>
 
 <script>
-  // Simple chatbot placeholder
+  // Chatbot placeholder
   function replyChat() {
     const input = document.getElementById('chatInput').value;
     const output = document.getElementById('chatOutput');
