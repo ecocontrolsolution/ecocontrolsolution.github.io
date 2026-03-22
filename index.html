@@ -3,182 +3,277 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EcoControlSolution</title>
+<title>EcoControlSolution – Industrial Automation</title>
+
 <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #ffffff;
-    color: #333;
-  }
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+body {background:#fff; color:#001f4d; line-height:1.7;}
 
-  /* Header with background image */
-  .header {
-    position: relative;
-    width: 100%;
-    height: 350px;
-    background: url('images/automation-bg.jpg') no-repeat center center;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    text-align: center;
-    color: white;
-  }
+/* HEADER */
+header {
+  height:100vh;
+  background: url('https://i.imgur.com/wQxGZcF.jpg') center/cover no-repeat;
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  text-align:center; color:#fff; position:relative;
+}
+header::after {
+  content:''; position:absolute; top:0; left:0; width:100%; height:100%;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,34,68,0.8));
+}
+header h1 {
+  position:relative; z-index:1;
+  font-size:4rem; margin-bottom:15px;
+  animation: floatGlow 3s ease-in-out infinite;
+  text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+}
+header p, header a { position:relative; z-index:1; }
+header p { font-size:1.5rem; margin-bottom:30px; }
+header a {
+  background:#00FFFF; color:#001f4d;
+  padding:15px 30px; border-radius:8px;
+  font-weight:bold; text-decoration:none;
+}
+header a:hover { background:#00b2b2; color:#fff; }
 
-  /* Company name with blinking effect */
-  .company-name {
-    font-size: 3em;
-    font-weight: bold;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
-    animation: blink 1.2s infinite alternate;
-  }
+@keyframes floatGlow {
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+}
 
-  @keyframes blink {
-    0% { opacity: 1; transform: translateY(0); }
-    50% { opacity: 0.5; transform: translateY(-5px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
+/* NAV */
+nav {
+  display:flex; justify-content:center; flex-wrap:wrap;
+  background:#002244; padding:15px 0; gap:30px;
+  position:sticky; top:0; z-index:100;
+}
+nav a {
+  color:#fff; font-weight:bold; text-decoration:none;
+  position:relative; padding:5px 0;
+}
+nav a::after {
+  content:''; height:3px; width:0; background:#00FFFF;
+  position:absolute; bottom:100%; left:0; transition:0.3s;
+}
+nav a:hover::after { width:100%; }
+nav a:hover { color:#00FFFF; }
 
-  /* Footer line animation in header */
-  .footer-line {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 80%;
-    height: 5px;
-    background: #00aaff;
-    transform: translateX(-50%);
-    animation: slide 2s infinite alternate;
-  }
+/* SECTION */
+section {
+  padding:70px 20px;
+  text-align:center;
+  max-width:1200px;
+  margin:0 auto;
+}
+section h2 {
+  font-size:2.4rem;
+  margin-bottom:25px;
+  color:#003366;
+}
+section h2::after {
+  content:''; display:block;
+  width:60px; height:4px;
+  background:#00FFFF;
+  margin:10px auto;
+}
 
-  @keyframes slide {
-    0% { width: 0; }
-    100% { width: 80%; }
-  }
+.image-block {
+  margin:25px auto;
+  max-width:900px;
+  border-radius:12px;
+  overflow:hidden;
+}
+.image-block img {
+  width:100%;
+  transition:0.4s;
+}
+.image-block img:hover {
+  transform:scale(1.05);
+}
 
-  /* Section styling */
-  section {
-    padding: 50px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+/* SERVICES GRID */
+.services-grid {
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+  justify-content:center;
+}
 
-  /* Gallery images with hover popup effect */
-  .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
+.service-card {
+  flex:0 1 calc(50% - 30px);
+  background:#f9f9f9;
+  border-radius:12px;
+  padding:20px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
 
-  .gallery-item {
-    position: relative;
-    overflow: hidden;
-    width: 250px;
-    height: 180px;
-    cursor: pointer;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  }
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.6s ease;
+}
 
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s;
-  }
+.service-card.show {
+  opacity:1;
+  transform:translateY(0);
+}
 
-  .gallery-item:hover img {
-    transform: scale(1.1);
-  }
+.service-card:hover {
+  transform:translateY(-8px);
+}
 
-  .gallery-item span {
-    position: absolute;
-    bottom: 0;
-    background: rgba(0,0,0,0.6);
-    width: 100%;
-    text-align: center;
-    color: white;
-    padding: 10px 0;
-    opacity: 0;
-    transition: opacity 0.4s;
-  }
+.service-card h3 {
+  margin:15px 0;
+  color:#003366;
+}
 
-  .gallery-item:hover span {
-    opacity: 1;
-  }
+.service-card img {
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:8px;
+}
 
-  /* Contact form */
-  .contact-form {
-    max-width: 500px;
-    margin: 0 auto;
-  }
+/* CONTACT */
+.contact form {
+  max-width:600px;
+  margin:20px auto;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+.contact input, .contact textarea {
+  padding:14px;
+  border-radius:6px;
+  border:1px solid #003366;
+}
+.contact button {
+  padding:15px;
+  background:#00FFFF;
+  border:none;
+  font-weight:bold;
+}
 
-  .contact-form input, 
-  .contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-  }
+/* FOOTER */
+footer {
+  text-align:center;
+  padding:30px;
+  background:#002244;
+  color:#fff;
+}
 
-  .contact-form button {
-    padding: 12px 20px;
-    background: #00aaff;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-
-  .contact-form button:hover {
-    background: #0077aa;
-  }
-
+/* MOBILE */
+@media(max-width:768px){
+  .service-card { flex:100%; }
+  header h1 { font-size:2.8rem; }
+}
 </style>
 </head>
+
 <body>
 
-<!-- Header Section -->
-<header class="header">
-  <div>
-    <div class="company-name">EcoControlSolution</div>
-    <div class="footer-line"></div>
-  </div>
+<header>
+  <h1><span style="color:#00FFFF;">Eco</span>ControlSolution</h1>
+  <p>Industrial Automation | PLC | SCADA | DDC</p>
+  <a href="#contact">Get in Touch</a>
 </header>
 
-<!-- Gallery Section -->
-<section>
-  <h2 style="text-align:center;">Our Solutions</h2>
-  <div class="gallery">
-    <div class="gallery-item">
-      <img src="images/heater.jpg" alt="Heater Solution">
-      <span>Heater Automation</span>
-    </div>
-    <div class="gallery-item">
-      <img src="images/sensor.jpg" alt="Sensor Solution">
-      <span>Industrial Sensors</span>
-    </div>
-    <div class="gallery-item">
-      <img src="images/automation.jpg" alt="Automation">
-      <span>Building Automation</span>
-    </div>
+<nav>
+  <a href="#overview">Overview</a>
+  <a href="#components">Components</a>
+  <a href="#services">Services</a>
+  <a href="#benefits">Benefits</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="overview">
+  <h2>Industrial Control Systems</h2>
+  <p>We design and implement automation systems for industrial and building environments.</p>
+  <div class="image-block">
+    <img src="https://i.imgur.com/6rD9xTr.jpg">
   </div>
 </section>
 
-<!-- Contact Section -->
-<section>
-  <h2 style="text-align:center;">Contact Us</h2>
-  <form class="contact-form">
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Email Address" required>
-    <textarea rows="5" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
+<section id="components">
+  <h2>Key Components</h2>
+  <p>PLCs, SCADA, sensors, actuators and operator interfaces.</p>
+  <div class="image-block">
+    <img src="https://i.imgur.com/qWy8rK2.jpg">
+  </div>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <img src="https://i.imgur.com/vD4HWv8.jpg">
+      <h3>PLC Services</h3>
+      <p>Programming & commissioning for Siemens, AB, Schneider, Mitsubishi.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="https://i.imgur.com/q4uge5x.jpg">
+      <h3>SCADA Systems</h3>
+      <p>Ignition, Citect, WinCC dashboards & control systems.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="https://honeywell.scene7.com/is/image/honeywell/Front%20View%20%28Lights%20On%29%201040x6811">
+      <h3>Niagara DDC</h3>
+      <p>Integration of HVAC & building automation systems.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="https://regulatorautomation.com.au/cdn/shop/products/FS-32_RA_09377484-cda9-41da-989e-47d3a6b5173b.png">
+      <h3>EasyIO DDC</h3>
+      <p>BACnet/IP controllers for HVAC & energy systems.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="https://i.imgur.com/F5b9pV6.jpg">
+      <h3>Automation Support</h3>
+      <p>Commissioning, troubleshooting & remote support.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="benefits">
+  <h2>Why Automation</h2>
+  <p>Improves efficiency, safety and reduces downtime.</p>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <form id="contactForm">
+    <input type="text" placeholder="Name" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Message"></textarea>
+    <button>Submit</button>
   </form>
 </section>
+
+<footer>
+  &copy; 2026 EcoControlSolution
+</footer>
+
+<script>
+const cards = document.querySelectorAll('.service-card');
+
+function revealCards() {
+  const trigger = window.innerHeight * 0.85;
+
+  cards.forEach((card, i) => {
+    if(card.getBoundingClientRect().top < trigger){
+      setTimeout(() => {
+        card.classList.add('show');
+      }, i * 150);
+    }
+  });
+}
+
+window.addEventListener('scroll', revealCards);
+revealCards();
+</script>
 
 </body>
 </html>
