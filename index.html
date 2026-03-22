@@ -3,38 +3,185 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EcoControlSolution – Industrial Automation</title>
-
+<title>EcoControlSolution</title>
 <style>
-  * {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
-  body {background:#fff; color:#001f4d; line-height:1.7;}
-
-  /* Hero Header / Landing */
-  header {
-    height:100vh;
-    background: url('https://i.imgur.com/wQxGZcF.jpg') center/cover no-repeat;
-    display:flex; flex-direction:column; justify-content:center; align-items:center;
-    text-align:center; color:#fff; position:relative;
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #333;
   }
-  header::after {
-    content:''; position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5);
-  }
-  header h1, header p, header a {
-    position:relative; z-index:1;
-  }
-  header h1 { font-size:4rem; margin-bottom:15px; animation: floatText 3s ease-in-out infinite; }
-  header p { font-size:1.5rem; margin-bottom:30px; }
-  header a { background:#00FFFF; color:#001f4d; padding:15px 30px; border-radius:8px; font-weight:bold; text-decoration:none; transition:0.3s; }
-  header a:hover { background:#00b2b2; color:#fff; }
-  @keyframes floatText {0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);} }
 
-  nav { display:flex; justify-content:center; flex-wrap:wrap; background:#002244; padding:15px 0; gap:30px; position:sticky; top:0; z-index:100;}
-  nav a { color:#fff; font-weight:bold; text-decoration:none; position:relative; padding:5px 0; transition:color 0.3s;}
-  nav a::after { content:''; display:block; height:3px; width:0; background:#00FFFF; position:absolute; bottom:100%; left:0; transition:width 0.3s; }
-  nav a:hover::after { width:100%; } nav a:hover { color:#00FFFF; }
+  /* Header with background image */
+  .header {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    background: url('images/automation-bg.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+  }
 
-  section { padding:70px 20px; text-align:center; max-width:1200px; margin:0 auto; }
-  section h2 { font-size:2.4rem; margin-bottom:25px; color:#003366; position:relative;}
+  /* Company name with blinking effect */
+  .company-name {
+    font-size: 3em;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+    animation: blink 1.2s infinite alternate;
+  }
+
+  @keyframes blink {
+    0% { opacity: 1; transform: translateY(0); }
+    50% { opacity: 0.5; transform: translateY(-5px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Footer line animation in header */
+  .footer-line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 80%;
+    height: 5px;
+    background: #00aaff;
+    transform: translateX(-50%);
+    animation: slide 2s infinite alternate;
+  }
+
+  @keyframes slide {
+    0% { width: 0; }
+    100% { width: 80%; }
+  }
+
+  /* Section styling */
+  section {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Gallery images with hover popup effect */
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    width: 250px;
+    height: 180px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.1);
+  }
+
+  .gallery-item span {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 10px 0;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .gallery-item:hover span {
+    opacity: 1;
+  }
+
+  /* Contact form */
+  .contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .contact-form input, 
+  .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+
+  .contact-form button {
+    padding: 12px 20px;
+    background: #00aaff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .contact-form button:hover {
+    background: #0077aa;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="header">
+  <div>
+    <div class="company-name">EcoControlSolution</div>
+    <div class="footer-line"></div>
+  </div>
+</header>
+
+<!-- Gallery Section -->
+<section>
+  <h2 style="text-align:center;">Our Solutions</h2>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="images/heater.jpg" alt="Heater Solution">
+      <span>Heater Automation</span>
+    </div>
+    <div class="gallery-item">
+      <img src="images/sensor.jpg" alt="Sensor Solution">
+      <span>Industrial Sensors</span>
+    </div>
+    <div class="gallery-item">
+      <img src="images/automation.jpg" alt="Automation">
+      <span>Building Automation</span>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section>
+  <h2 style="text-align:center;">Contact Us</h2>
+  <form class="contact-form">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Email Address" required>
+    <textarea rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+</body>
+</html>  section h2 { font-size:2.4rem; margin-bottom:25px; color:#003366; position:relative;}
   section h2::after { content:''; display:block; width:60px; height:4px; background:#00FFFF; margin:10px auto 0; border-radius:3px; }
   section p { max-width:800px; margin:15px auto 25px auto; font-size:1.05rem; color:#001f4d; }
 
