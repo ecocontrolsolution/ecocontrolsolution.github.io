@@ -3,146 +3,200 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ECO Control Solution</title>
+  <title>Eco Control Solutions – Industrial Automation & Control Systems</title>
+
   <style>
-    /* Reset and basic styles */
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
       font-family: Arial, sans-serif;
     }
-
     body {
-      background-color: #001f4d; /* dark blue */
-      color: #F0F0F0; /* light gray for visibility */
-      line-height: 1.6;
+      background: #001f4d;
+      color: #f0f0f0;
+      line-height: 1.7;
     }
-
     header {
-      padding: 20px;
+      background: #003366;
       text-align: center;
-      background-color: #003366;
+      padding: 30px 10px;
     }
-
     header h1 {
-      font-size: 2rem;
-      color: #FFFFFF; /* white for header */
+      font-size: 2.6rem;
+      color: #00FFFF;
     }
-
     nav {
       display: flex;
       justify-content: center;
-      background-color: #002244;
-      padding: 10px 0;
+      background: #002244;
+      padding: 12px 0;
+      gap: 30px;
     }
-
     nav a {
-      color: #F0F0F0; /* light gray for links */
-      text-decoration: none;
-      margin: 0 20px;
-      position: relative;
-      padding: 5px 0;
+      color: #f0f0f0;
       font-weight: bold;
-      transition: color 0.3s;
+      text-decoration: none;
+      position: relative;
     }
-
-    /* Drop-up line effect */
     nav a::after {
       content: '';
       display: block;
-      width: 0;
       height: 3px;
-      background: #00FFFF; /* bright cyan line */
+      width: 0;
+      background: #00FFFF;
       position: absolute;
-      bottom: 100%; /* drop-up effect */
+      bottom: 100%;
       left: 0;
-      transition: width 0.3s;
+      transition: width .3s;
     }
-
     nav a:hover::after {
       width: 100%;
     }
-
-    nav a:hover {
-      color: #00FFFF; /* link color changes on hover */
-    }
-
-    main {
-      padding: 40px 20px;
+    section {
+      padding: 60px 20px;
       text-align: center;
     }
-
-    main h2 {
-      font-size: 1.8rem;
+    section h2 {
+      font-size: 2rem;
       margin-bottom: 20px;
-      color: #FFFFFF; /* headings white */
+      color: #00FFFF;
     }
-
-    main p {
-      max-width: 700px;
-      margin: 0 auto 20px auto;
-      color: #E0E0E0; /* paragraph slightly lighter gray */
+    section p {
+      max-width: 800px;
+      margin: 0 auto 25px auto;
     }
-
+    .image-block {
+      margin: 20px auto;
+      max-width: 900px;
+    }
+    .image-block img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
     .contact a {
       display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background-color: #00FFFF; /* bright cyan button */
-      color: #001f4d; /* dark blue text inside button */
+      background: #00FFFF;
+      color: #001f4d;
       text-decoration: none;
-      border-radius: 5px;
+      padding: 12px 24px;
+      border-radius: 6px;
       font-weight: bold;
-      transition: background 0.3s, color 0.3s;
+      margin-top: 15px;
+      transition: background .3s;
     }
-
     .contact a:hover {
-      background-color: #00B2B2; /* darker cyan hover */
-      color: #FFFFFF;
+      background: #00b2b2;
+      color: #fff;
     }
-
     footer {
       text-align: center;
-      padding: 20px;
-      background-color: #002244;
-      color: #F0F0F0;
+      padding: 25px 10px;
+      background: #002244;
     }
-
   </style>
 </head>
+
 <body>
 
   <header>
-    <h1>ECO Control Solution</h1>
+    <h1>ECO Control Solutions</h1>
+    <p>Industrial Automation | PLCs | SCADA | Sensors | Actuators</p>
   </header>
 
   <nav>
-    <a href="#services">Services</a>
-    <a href="#about">About Us</a>
+    <a href="#overview">Overview</a>
+    <a href="#components">Components</a>
+    <a href="#benefits">Benefits</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <main>
-    <section id="services">
-      <h2>Our Services</h2>
-      <p>We provide industrial automation and building management control systems with sensors and automation products for efficiency and safety.</p>
-    </section>
+  <!-- OVERVIEW -->
+  <section id="overview">
+    <h2>Industrial Control Systems — What We Do</h2>
+    <p>
+      We design and implement advanced industrial control systems using proven
+      hardware and software to automate manufacturing and process facilities.
+      Our core systems include PLCs (Programmable Logic Controllers),
+      SCADA supervisory platforms, field sensors, actuators, and operator
+      interfaces.
+    </p>
 
-    <section id="about">
-      <h2>About ECO Control Solution</h2>
-      <p>Our company specializes in smart control solutions for industrial and commercial buildings, delivering tailored automation solutions that fit your needs.</p>
-    </section>
+    <div class="image-block">
+      <img src="industrial-control-room.jpg" alt="Control room with SCADA displays" />
+    </div>
 
-    <section id="contact" class="contact">
-      <h2>Contact Us</h2>
-      <p>Have questions or want a quote? Reach out directly via email:</p>
-      <a href="mailto:info@ecocontrol.com">info@ecocontrol.com</a>
-    </section>
-  </main>
+    <p>
+      A PLC is a ruggedized industrial computer used to control machinery
+      and processes in real time. :contentReference[oaicite:1]{index=1} SCADA systems
+      collect data from PLCs and sensors for supervisory monitoring and
+      historical analysis. :contentReference[oaicite:2]{index=2}
+    </p>
+
+    <div class="image-block">
+      <img src="plc-and-scada-diagram.jpg" alt="PLC and SCADA architecture diagram" />
+    </div>
+  </section>
+
+  <!-- COMPONENTS -->
+  <section id="components">
+    <h2>Key System Components</h2>
+
+    <p><strong>Programmable Logic Controllers (PLCs)</strong><br>
+      The reliable “brains” of automated systems, executing logic and control
+      routines with real‑world I/O. :contentReference[oaicite:3]{index=3}
+    </p>
+
+    <p><strong>SCADA & HMIs</strong><br>
+      Supervisory control and data acquisition systems provide centralized
+      monitoring, alarm handling, and operator interaction. :contentReference[oaicite:4]{index=4}
+    </p>
+
+    <p><strong>Sensors & Actuators</strong><br>
+      Sensors measure physical variables like temperature and pressure,
+      while actuators perform the physical actions commanded by controllers. :contentReference[oaicite:5]{index=5}
+    </p>
+
+    <div class="image-block">
+      <img src="sensors-actuators.jpg" alt="Grid of sensors and actuators" />
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section id="benefits">
+    <h2>Why Industrial Automation Matters</h2>
+
+    <p>
+      Automation increases production efficiency by reducing manual intervention
+      and eliminating repetitive tasks. Modern control systems also improve
+      safety by providing real‑time monitoring and emergency responses. :contentReference[oaicite:6]{index=6}
+    </p>
+
+    <p>
+      With intelligent automation, organisations achieve:
+      <ul style="text-align:left; margin: 15px auto; max-width: 600px;">
+        <li>Higher throughput and uptime</li>
+        <li>Consistent quality and reduced defects</li>
+        <li>Lower operating costs and energy waste</li>
+        <li>Remote monitoring and diagnostics</li>
+      </ul>
+    </p>
+
+    <div class="image-block">
+      <img src="automation-benefits.jpg" alt="Graphical automation benefits" />
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>
+      For project inquiries, system design, or quotes, email us directly:
+    </p>
+    <a href="mailto:info@ecocontrol.com">info@ecocontrol.com</a>
+  </section>
 
   <footer>
-    &copy; 2026 ECO Control Solution. All rights reserved.
+    &copy; 2026 ECO Control Solutions. All rights reserved.
   </footer>
 
 </body>
