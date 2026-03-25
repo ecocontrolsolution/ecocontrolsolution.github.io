@@ -31,8 +31,18 @@ header {
 }
   /* TOP BAR */
 .top-bar {
- background: #fff;  /* white background behind tabs */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* optional subtle shadow */
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:80px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 30px;
+  z-index:1000;
+  box-shadow:0 2px 10px rgba(0,0,0,0.15);
 }
 
 .top-bar img {
@@ -40,7 +50,7 @@ header {
 }
 
 .top-bar span {
-  color:#000FFF;
+  color:#00FFFF;
   font-weight:bold;
   font-size:1.2rem;
   margin-left:10px;
@@ -48,17 +58,16 @@ header {
 
 /* NAVIGATION IN TOP BAR */
 .top-nav a {
- display:inline-block;
-  width:130px;       /* same width */
-  text-align:center;
-  padding:12px 0;
-  margin-left:15px;
-  border-radius:6px; /* optional */
-  background: transparent; /* no box behind each tab */
-  color:#001f4d;
+ ccolor:#001f4d;          /* dark text for white background */
   font-weight:bold;
   text-decoration:none;
-  transition: color 0.3s;
+  display:inline-block;   /* needed for width */
+  width:130px;            /* same width for all tabs */
+  text-align:center;      /* center the text */
+  padding:12px 0;         /* vertical padding */
+  margin-left:15px;       /* space between tabs */
+  border-radius:6px;      /* optional rounded edges */
+  transition: color 0.3s, background 0.3s;
   position:relative;
 }
 .top-nav a::after {
@@ -83,7 +92,7 @@ header {
 /* HERO SECTION */
 .hero-content {
   margin-top:70px; /* pushes hero content below top-bar */
-  height:80vh;
+  height:100vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -124,8 +133,6 @@ header {
 /* FLOATING BG */
 .floating-bg {
   position:absolute;
-  top: 0;
-  left: 0;
   width:100%;
   height:100%;
   overflow:hidden;
@@ -252,14 +259,14 @@ footer { text-align:center; padding:30px 10px; background:#002244; color:#fff; f
     <img src="images/logonew.jpg" alt="EcoControlSolution Logo">
     <!-- <span>EcoControlSolution</span>-->
 
-    <!-- Navigation tabs 
+    <!-- Navigation tabs -->
     <nav class="top-nav">
       <a href="#overview">Overview</a>
       <a href="#components">Components</a>
       <a href="#services">Services</a>
       <a href="#benefits">Benefits</a>
       <a href="#contact">Contact</a>
-    </nav>-->
+    </nav>
   </div>
 
   <!-- Hero section content -->
