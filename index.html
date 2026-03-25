@@ -31,8 +31,17 @@ header {
 }
   /* TOP BAR */
 .top-bar {
-  background: #fff;  /* white background behind tabs */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* optional subtle shadow */
+ width: 100%;
+  height: 80px;            /* banner height */
+  background: #fff;        /* white background */
+  display: flex;
+  align-items: center;
+  padding: 0 30px;         /* space from left/right edges */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* subtle shadow */
+  position: fixed;         /* stays on top */
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 .top-bar img {
@@ -82,7 +91,7 @@ header {
 /* HERO SECTION */
 .hero-content {
   margin-top:70px; /* pushes hero content below top-bar */
-  height:100vh;
+  height:80vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -249,14 +258,14 @@ footer { text-align:center; padding:30px 10px; background:#002244; color:#fff; f
     <img src="images/logonew.jpg" alt="EcoControlSolution Logo">
     <!-- <span>EcoControlSolution</span>-->
 
-    <!-- Navigation tabs -->
+    <!-- Navigation tabs 
     <nav class="top-nav">
       <a href="#overview">Overview</a>
       <a href="#components">Components</a>
       <a href="#services">Services</a>
       <a href="#benefits">Benefits</a>
       <a href="#contact">Contact</a>
-    </nav>
+    </nav>-->
   </div>
 
   <!-- Hero section content -->
