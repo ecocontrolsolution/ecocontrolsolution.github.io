@@ -103,16 +103,11 @@ nav {
   background: #002244;
   padding: 15px 0;
 
-  position: absolute; /* initially scrolls with hero */
+ /* position: absolute; /* initially scrolls with hero */
   width: 100%;
-  top: 65vh;          /* height of hero (adjust if needed) */
   z-index: 999;
-  transition: top 0.3s ease, position 0.3s ease;
-}
-
-nav.sticky {
-  position: fixed;  /* sticks at top */
-  top: 80px;        /* below top banner */
+  position: sticky; /* sticky relative to viewport */
+  top: 80px;        /* your top banner height */
 }
 /* FLOATING BG */
 .floating-bg {
