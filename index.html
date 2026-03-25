@@ -29,6 +29,24 @@ header {
   display:flex; flex-direction:column; justify-content:center; align-items:center;
   text-align:center; position:relative; overflow:hidden;
 }
+  nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  background: #002244;
+  padding: 15px 0;
+  width: 100%;
+  position: absolute; /* starts moving with hero */
+  top: 65vh;          /* adjust to your hero height */
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+nav.sticky {
+  position: fixed;
+  top: 80px;          /* below top banner */
+  left: 0;
+}
   /* TOP BAR */
 .top-bar {
   position:fixed;
@@ -96,19 +114,7 @@ header {
   background:#00b2b2;
   color:#fff;
 }
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  background: #002244;
-  padding: 15px 0;
 
- /* position: absolute; /* initially scrolls with hero */
-  width: 100%;
-  z-index: 999;
-  position: sticky; /* sticky relative to viewport */
-  top: 80px;        /* your top banner height */
-}
 /* FLOATING BG */
 .floating-bg {
   position:absolute;
