@@ -31,17 +31,8 @@ header {
 }
   /* TOP BAR */
 .top-bar {
- width: 100%;
-  height: 80px;            /* banner height */
-  background: #fff;        /* white background */
-  display: flex;
-  align-items: center;
-  padding: 0 30px;         /* space from left/right edges */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* subtle shadow */
-  /*position: fixed;         /* stays on top */
-  top: 0;
-  left: 0;
-  z-index: 1000;
+ background: #fff;  /* white background behind tabs */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* optional subtle shadow */
 }
 
 .top-bar img {
@@ -57,16 +48,17 @@ header {
 
 /* NAVIGATION IN TOP BAR */
 .top-nav a {
-  color:#001f4d;          /* dark text for white background */
+ display:inline-block;
+  width:130px;       /* same width */
+  text-align:center;
+  padding:12px 0;
+  margin-left:15px;
+  border-radius:6px; /* optional */
+  background: transparent; /* no box behind each tab */
+  color:#001f4d;
   font-weight:bold;
   text-decoration:none;
-  display:inline-block;   /* needed for width */
-  width:130px;            /* same width for all tabs */
-  text-align:center;      /* center the text */
-  padding:12px 0;         /* vertical padding */
-  margin-left:15px;       /* space between tabs */
-  border-radius:6px;      /* optional rounded edges */
-  transition: color 0.3s, background 0.3s;
+  transition: color 0.3s;
   position:relative;
 }
 .top-nav a::after {
