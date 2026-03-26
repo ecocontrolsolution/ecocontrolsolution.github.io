@@ -203,20 +203,16 @@
    HERO & FLOATING MOTION TEXT FIX
    ============================== */
 
+/* ==============================
+   HERO & NAV ADJUSTMENTS (WITHOUT CHANGING FLOATING TEXT)
+   ============================== */
+
 /* Make hero h1 and p scale on desktop and mobile */
 header h1 {
   font-size: clamp(2.8rem, 5vw, 4rem); /* scales between 2.8rem and 4rem */
 }
 header p {
   font-size: clamp(1.2rem, 2vw, 1.5rem);
-}
-
-/* Make floating motion text spans full width and centered */
-.floating-bg span {
-  left: 0 !important;
-  width: 100%;
-  text-align: center;
-  font-size: clamp(1.5rem, 2vw, 2rem);
 }
 
 /* Ensure hero content is centered and has padding on wide screens */
@@ -243,7 +239,7 @@ nav a {
 }
 
 /* Optional: ensure hero floats behind nav properly */
-.hero-content, .floating-bg {
+.hero-content {
   position: relative;
   z-index: 1;
 }
