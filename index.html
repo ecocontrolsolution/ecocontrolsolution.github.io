@@ -199,7 +199,54 @@
 .chatbot input { padding:10px; margin-top:5px; width:100%; border-radius:6px; border:1px solid #003366;}
 .chatbot button { padding:12px; width:100%; margin-top:8px; border-radius:6px; border:none; background:#003366; color:#fff; cursor:pointer;}
 .chatbot button:hover { background:#002244; }
+* ==============================
+   HERO & FLOATING MOTION TEXT FIX
+   ============================== */
 
+/* Make hero h1 and p scale on desktop and mobile */
+header h1 {
+  font-size: clamp(2.8rem, 5vw, 4rem); /* scales between 2.8rem and 4rem */
+}
+header p {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
+
+/* Make floating motion text spans full width and centered */
+.floating-bg span {
+  left: 0 !important;
+  width: 100%;
+  text-align: center;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+/* Ensure hero content is centered and has padding on wide screens */
+.hero-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* NAVIGATION ADJUSTMENTS FOR DESKTOP */
+nav {
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;           /* reduces spacing for wider screens */
+  padding: 10px 20px;
+}
+
+nav a {
+  min-width: 120px;     /* same width buttons */
+  text-align: center;
+  padding: 10px 0;
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem); /* scales text with screen */
+}
+
+/* Optional: ensure hero floats behind nav properly */
+.hero-content, .floating-bg {
+  position: relative;
+  z-index: 1;
+}
 </style>
 </head>
 <body>
