@@ -138,7 +138,9 @@
   nav a:hover { color:#00FFFF; }
 
   /* SECTIONS */
-  section { padding:70px 20px; text-align:center; max-width:1200px; margin:0 auto; transition: all 0.8s ease;}
+  section { padding:70px 20px; text-align:center; max-width:1200px; margin:0 auto; transition: all 0.8s ease;
+  scroll-margin-top: 120px; /* adjust this */
+}
   section h2 { font-size:2.4rem; margin-bottom:25px; color:#003366; position:relative; }
   section h2::after { content:''; display:block; width:60px; height:4px; background:#00FFFF; margin:10px auto 0; border-radius:3px; }
   section p { max-width:800px; margin:15px auto 25px auto; font-size:1.05rem; color:#001f4d; }
@@ -149,7 +151,7 @@
   .image-block img:hover { transform:scale(1.05); filter: brightness(1.1); }
 
   /* SERVICES GRID */
-  .services-grid { display:flex; flex-wrap:wrap; gap:60px; justify-content:center; max-width:1200px; margin:0 auto; }
+  .services-grid { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; max-width:1200px; margin:0 auto; }
   .service-card { flex:0 1 calc(50% - 30px); background:#f9f9f9; border-radius:12px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.1); text-align:center; padding:20px; transition: transform 0.3s, box-shadow 0.3s; }
   .service-card:hover { transform:translateY(-8px); box-shadow:0 10px 25px rgba(0,0,0,0.15); }
   .service-card h3 { margin:15px 0; color:#003366; }
@@ -157,7 +159,7 @@
   .service-card .image-block img { width:100%; height:180px; object-fit:cover; border-radius:8px; }
 
   /* BENEFITS */
-  .benefits-grid { display:flex; flex-wrap:wrap; gap:60px; justify-content:center; max-width:1200px; margin:0 auto; }
+  .benefits-grid { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; max-width:1200px; margin:0 auto; }
   .benefit-card { flex:0 1 calc(33% - 30px); background:#e6f7ff; border-radius:12px; padding:20px; text-align:center; transition: transform 0.3s; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
   .benefit-card:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.15); }
   .benefit-card h3 { color:#003366; margin-bottom:10px; }
